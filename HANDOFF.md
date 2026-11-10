@@ -29,4 +29,3 @@ Project **MockSieve** has completed all 7 pipeline stages and has been published
 
 ### Next Actions
 - Verify live GitHub repository: https://github.com/Rahul-Abhishek-AU6/mocksieve
-- Submit prepared Reddit post from `reports/reddit-post.md` to `r/Python` using active browser session.
