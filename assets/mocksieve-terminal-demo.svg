@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" role="img" aria-label="MockSieve terminal audit catching ghost mock target and unconstrained mock drift">
+  <rect width="1200" height="740" fill="#0d1117" rx="16"/>
+  <!-- Window Controls -->
+  <circle cx="36" cy="34" r="8" fill="#ff5f57"/>
+  <circle cx="62" cy="34" r="8" fill="#febc2e"/>
+  <circle cx="88" cy="34" r="8" fill="#28c840"/>
+  <text x="600" y="40" fill="#8b949e" font-family="ui-monospace, Menlo, Monaco, monospace" font-size="16" font-weight="600" text-anchor="middle">mocksieve — test mock drift &amp; ghost target gate</text>
+
+  <g font-family="ui-monospace, Menlo, Monaco, monospace" font-size="19" fill="#c9d1d9">
+    <!-- Command -->
+    <text x="40" y="90" fill="#7ee787">$</text>
+    <text x="65" y="90" fill="#f0f6fc">python3 run_mocksieve.py --diff</text>
+
+    <!-- Header Receipt -->
+    <text x="40" y="140" fill="#58a6ff" font-weight="bold">MockSieve Mock Drift &amp; Test Double Audit</text>
+    <text x="40" y="175" fill="#8b949e">Root: /workspace/billing-service | Mode: Git Diff</text>
+    <text x="40" y="205" fill="#8b949e">Indexed 4 source modules | Scanned 1 test files (1 mock targets)</text>
+
+    <!-- Violation Section -->
+    <text x="40" y="260" fill="#ff7b72" font-weight="bold">🚨 GHOST MOCK TARGETS DETECTED (1)</text>
+    <text x="40" y="292" fill="#8b949e" font-size="16">Mock targets symbol deleted or renamed in source code! Tests pass while production crashes!</text>
+
+    <!-- Finding 1 -->
+    <text x="40" y="340" fill="#ff7b72" font-weight="bold">  1. 'services.billing.calculate_tax'</text>
+    <text x="480" y="340" fill="#f0f6fc">at tests/test_billing.py:3</text>
+    <text x="75" y="372" fill="#8b949e">Statement: </text><text x="205" y="372" fill="#f0f6fc">@patch("services.billing.calculate_tax", autospec=True)</text>
+    <text x="75" y="402" fill="#d29922">Defect: </text><text x="165" y="402" fill="#f0f6fc">Symbol 'calculate_tax' does not exist in module 'services.billing'</text>
+    <text x="75" y="432" fill="#58a6ff">Refactor: </text><text x="185" y="432" fill="#8b949e">Renamed to 'calculate_invoice_tax' in src/services/billing.py</text>
+
+    <!-- Unconstrained Warning Section -->
+    <text x="40" y="500" fill="#d29922" font-weight="bold">⚠️  UNCONSTRAINED MOCKS WARNING</text>
+    <text x="40" y="530" fill="#8b949e" font-size="16">Bare @patch calls without autospec=True act as "infinite yes-men" that pass invalid calls.</text>
+
+    <!-- Result Footer -->
+    <text x="40" y="655" fill="#ff7b72" font-weight="bold">Result: FAILED (Exit 1)</text>
+    <text x="310" y="655" fill="#8b949e">— Blocked merge: 1 ghost mock target</text>
+
+    <text x="40" y="708" fill="#484f58" font-size="14">Truthful terminal demo captured from demo.py test execution; zero mock fabrication.</text>
+  </g>
+</svg>
