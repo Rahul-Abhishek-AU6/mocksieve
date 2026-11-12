@@ -24,3 +24,18 @@ wheels/
 htmlcov/
 .DS_Store
 .env
+
+# AI / Agent files and orchestration scaffolds (local-only, never pushed to GitHub)
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+HANDOFF.md
+STATE.json
+prompts/
+reports/
+logs/
+.agents/
+.gemini/
+.claude/
+.cursor/
+
